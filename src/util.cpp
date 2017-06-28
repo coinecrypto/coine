@@ -936,11 +936,8 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-<<<<<<< HEAD
     const char* pszModule = "coine";
-=======
-    const char* pszModule = "foocoin";
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 #endif
     if (pex)
         return strprintf(
@@ -976,7 +973,6 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-<<<<<<< HEAD
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\Coine
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\Coine
     // Mac: ~/Library/Application Support/Coine
@@ -984,15 +980,6 @@ boost::filesystem::path GetDefaultDataDir()
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "Coine";
-=======
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\FooCoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\FooCoin
-    // Mac: ~/Library/Application Support/FooCoin
-    // Unix: ~/.foocoin
-#ifdef WIN32
-    // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "FooCoin";
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1004,17 +991,11 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-<<<<<<< HEAD
     return pathRet / "Coine";
 #else
     // Unix
     return pathRet / ".coine";
-=======
-    return pathRet / "FooCoin";
-#else
-    // Unix
-    return pathRet / ".foocoin";
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 #endif
 #endif
 }
@@ -1056,11 +1037,8 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
-<<<<<<< HEAD
     boost::filesystem::path pathConfigFile(GetArg("-conf", "coine.conf"));
-=======
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "foocoin.conf"));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1070,22 +1048,16 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good())
-<<<<<<< HEAD
         return; // No coine.conf file is OK
-=======
-        return; // No foocoin.conf file is OK
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 
     set<string> setOptions;
     setOptions.insert("*");
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
     {
-<<<<<<< HEAD
         // Don't overwrite existing settings so command line settings override coine.conf
-=======
-        // Don't overwrite existing settings so command line settings override foocoin.conf
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
         string strKey = string("-") + it->string_key;
         if (mapSettingsRet.count(strKey) == 0)
         {
@@ -1099,11 +1071,8 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-<<<<<<< HEAD
     boost::filesystem::path pathPidFile(GetArg("-pid", "coine.pid"));
-=======
-    boost::filesystem::path pathPidFile(GetArg("-pid", "foocoin.pid"));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
@@ -1243,17 +1212,11 @@ void AddTimeData(const CNetAddr& ip, int64 nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-<<<<<<< HEAD
                     string strMessage = _("Warning: Please check that your computer's date and time are correct.  If your clock is wrong Coine will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
                     uiInterface.ThreadSafeMessageBox(strMessage+" ", string("Coine"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
-=======
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct.  If your clock is wrong FooCoin will not work properly.");
-                    strMiscWarning = strMessage;
-                    printf("*** %s\n", strMessage.c_str());
-                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("FooCoin"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
                 }
             }
         }

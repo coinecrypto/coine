@@ -120,11 +120,8 @@ OBJS= \
     obj/noui.o
 
 
-<<<<<<< HEAD
 all: coined
-=======
-all: foocoind
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 
 # auto-generated dependencies:
 -include obj/*.P
@@ -145,11 +142,8 @@ obj/%.o: %.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-<<<<<<< HEAD
 coined: $(OBJS:obj/%=obj/%)
-=======
-foocoind: $(OBJS:obj/%=obj/%)
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 	$(CXX) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -161,19 +155,12 @@ obj-test/%.o: test/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-<<<<<<< HEAD
 test_coined: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ -Wl,-B$(LMODE) -lboost_unit_test_framework $(xLDFLAGS) $(LIBS)
 
 clean:
 	-rm -f coined test_coined
-=======
-test_foocoind: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
-	$(CXX) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ -Wl,-B$(LMODE) -lboost_unit_test_framework $(xLDFLAGS) $(LIBS)
 
-clean:
-	-rm -f foocoind test_foocoind
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P

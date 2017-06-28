@@ -284,17 +284,11 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "stop\n"
-<<<<<<< HEAD
             "Stop Coine server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
     return "Coine server has now stopped running!";
-=======
-            "Stop FooCoin server.");
-    // Shutdown will take long enough that the response should get back
-    StartShutdown();
-    return "FooCoin server has now stopped running!";
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 }
 
 
@@ -464,11 +458,8 @@ Value getnewaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getnewaddress [account]\n"
-<<<<<<< HEAD
             "Returns a new Coine address for receiving payments.  "
-=======
-            "Returns a new FooCoin address for receiving payments.  "
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             "If [account] is specified (recommended), it is added to the address book "
             "so payments received with the address will be credited to [account].");
 
@@ -535,11 +526,8 @@ Value getaccountaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "getaccountaddress <account>\n"
-<<<<<<< HEAD
             "Returns the current Coine address for receiving payments to this account.");
-=======
-            "Returns the current FooCoin address for receiving payments to this account.");
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 
     // Parse the account first so we don't generate a key if there's an error
     string strAccount = AccountFromValue(params[0]);
@@ -557,20 +545,14 @@ Value setaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-<<<<<<< HEAD
             "setaccount <coine address> <account>\n"
-=======
-            "setaccount <foocoin address> <account>\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             "Sets the account associated with the given address.");
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-<<<<<<< HEAD
         throw JSONRPCError(-5, "Invalid Coine address");
-=======
-        throw JSONRPCError(-5, "Invalid FooCoin address");
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 
 
     string strAccount;
@@ -595,20 +577,14 @@ Value getaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-<<<<<<< HEAD
             "getaccount <coine address>\n"
-=======
-            "getaccount <foocoin address>\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             "Returns the account associated with the given address.");
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-<<<<<<< HEAD
         throw JSONRPCError(-5, "Invalid Coine address");
-=======
-        throw JSONRPCError(-5, "Invalid FooCoin address");
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 
     string strAccount;
     map<CTxDestination, string>::iterator mi = pwalletMain->mapAddressBook.find(address.Get());
@@ -675,21 +651,15 @@ Value sendtoaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 2 || params.size() > 4)
         throw runtime_error(
-<<<<<<< HEAD
             "sendtoaddress <coine address> <amount> [comment] [comment-to]\n"
-=======
-            "sendtoaddress <foocoin address> <amount> [comment] [comment-to]\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             "<amount> is a real and is rounded to the nearest 0.00000001"
             + HelpRequiringPassphrase());
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-<<<<<<< HEAD
         throw JSONRPCError(-5, "Invalid Coine address");
-=======
-        throw JSONRPCError(-5, "Invalid FooCoin address");
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 
     // Amount
     int64 nAmount = AmountFromValue(params[1]);
@@ -715,11 +685,8 @@ Value signmessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 2)
         throw runtime_error(
-<<<<<<< HEAD
             "signmessage <coine address> <message>\n"
-=======
-            "signmessage <foocoin address> <message>\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             "Sign a message with the private key of an address");
 
     EnsureWalletIsUnlocked();
@@ -754,11 +721,8 @@ Value verifymessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 3)
         throw runtime_error(
-<<<<<<< HEAD
             "verifymessage <coine address> <signature> <message>\n"
-=======
-            "verifymessage <foocoin address> <signature> <message>\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             "Verify a signed message");
 
     string strAddress  = params[0].get_str();
@@ -795,7 +759,7 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-<<<<<<< HEAD
+
             "getreceivedbyaddress <coine address> [minconf=1]\n"
             "Returns the total amount received by <coine address> in transactions with at least [minconf] confirmations.");
 
@@ -804,16 +768,7 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
     CScript scriptPubKey;
     if (!address.IsValid())
         throw JSONRPCError(-5, "Invalid Coine address");
-=======
-            "getreceivedbyaddress <foocoin address> [minconf=1]\n"
-            "Returns the total amount received by <foocoin address> in transactions with at least [minconf] confirmations.");
 
-    // FooCoin address
-    CBitcoinAddress address = CBitcoinAddress(params[0].get_str());
-    CScript scriptPubKey;
-    if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid FooCoin address");
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
     scriptPubKey.SetDestination(address.Get());
     if (!IsMine(*pwalletMain,scriptPubKey))
         return (double)0.0;
@@ -1027,22 +982,16 @@ Value sendfrom(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 3 || params.size() > 6)
         throw runtime_error(
-<<<<<<< HEAD
             "sendfrom <fromaccount> <to coine address> <amount> [minconf=1] [comment] [comment-to]\n"
-=======
-            "sendfrom <fromaccount> <to foocoin address> <amount> [minconf=1] [comment] [comment-to]\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             "<amount> is a real and is rounded to the nearest 0.00000001"
             + HelpRequiringPassphrase());
 
     string strAccount = AccountFromValue(params[0]);
     CBitcoinAddress address(params[1].get_str());
     if (!address.IsValid())
-<<<<<<< HEAD
         throw JSONRPCError(-5, "Invalid Coine address");
-=======
-        throw JSONRPCError(-5, "Invalid FooCoin address");
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     int64 nAmount = AmountFromValue(params[2]);
     int nMinDepth = 1;
     if (params.size() > 3)
@@ -1098,11 +1047,8 @@ Value sendmany(const Array& params, bool fHelp)
     {
         CBitcoinAddress address(s.name_);
         if (!address.IsValid())
-<<<<<<< HEAD
             throw JSONRPCError(-5, string("Invalid Coine address:")+s.name_);
-=======
-            throw JSONRPCError(-5, string("Invalid FooCoin address:")+s.name_);
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 
         if (setAddress.count(address))
             throw JSONRPCError(-8, string("Invalid parameter, duplicated address: ")+s.name_);
@@ -1145,11 +1091,8 @@ Value addmultisigaddress(const Array& params, bool fHelp)
     {
         string msg = "addmultisigaddress <nrequired> <'[\"key\",\"key\"]'> [account]\n"
             "Add a nrequired-to-sign multisignature address to the wallet\"\n"
-<<<<<<< HEAD
             "each key is a Coine address or hex-encoded public key\n"
-=======
-            "each key is a FooCoin address or hex-encoded public key\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             "If [account] is specified, assign address to [account].";
         throw runtime_error(msg);
     }
@@ -1173,11 +1116,8 @@ Value addmultisigaddress(const Array& params, bool fHelp)
     {
         const std::string& ks = keys[i].get_str();
 
-<<<<<<< HEAD
         // Case 1: Coine address and we have full public key:
-=======
-        // Case 1: FooCoin address and we have full public key:
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
         CBitcoinAddress address(ks);
         if (address.IsValid())
         {
@@ -1869,11 +1809,8 @@ Value encryptwallet(const Array& params, bool fHelp)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys.  So:
     StartShutdown();
-<<<<<<< HEAD
     return "wallet encrypted; Coine server stopping, restart to run with encrypted wallet";
-=======
-    return "wallet encrypted; FooCoin server stopping, restart to run with encrypted wallet";
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 }
 
 class DescribeAddressVisitor : public boost::static_visitor<Object>
@@ -1915,13 +1852,9 @@ Value validateaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-<<<<<<< HEAD
             "validateaddress <coine address>\n"
             "Return information about <coine address>.");
-=======
-            "validateaddress <foocoin address>\n"
-            "Return information about <foocoin address>.");
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 
     CBitcoinAddress address(params[0].get_str());
     bool isValid = address.IsValid();
@@ -1954,17 +1887,11 @@ Value getworkex(const Array& params, bool fHelp)
         );
 
     if (vNodes.empty())
-<<<<<<< HEAD
         throw JSONRPCError(-9, "Coine server is not connected!");
 
     if (IsInitialBlockDownload())
         throw JSONRPCError(-10, "Coine server is downloading blocks...");
-=======
-        throw JSONRPCError(-9, "FooCoin server is not connected!");
 
-    if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "FooCoin server is downloading blocks...");
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;
@@ -2093,17 +2020,11 @@ Value getwork(const Array& params, bool fHelp)
             "If [data] is specified, tries to solve the block and returns true if it was successful.");
 
     if (vNodes.empty())
-<<<<<<< HEAD
         throw JSONRPCError(-9, "Coine server is not connected!");
 
     if (IsInitialBlockDownload())
         throw JSONRPCError(-10, "Coine server is downloading blocks...");
-=======
-        throw JSONRPCError(-9, "FooCoin server is not connected!");
 
-    if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "FooCoin server is downloading blocks...");
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;    // FIXME: thread safety
@@ -2232,17 +2153,11 @@ Value getblocktemplate(const Array& params, bool fHelp)
     if (strMode == "template")
     {
         if (vNodes.empty())
-<<<<<<< HEAD
             throw JSONRPCError(-9, "Coine server is not connected!");
 
         if (IsInitialBlockDownload())
             throw JSONRPCError(-10, "Coine server is downloading blocks...");
-=======
-            throw JSONRPCError(-9, "FooCoin server is not connected!");
 
-        if (IsInitialBlockDownload())
-            throw JSONRPCError(-10, "FooCoin server is downloading blocks...");
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
 
         static CReserveKey reservekey(pwalletMain);
 
@@ -2518,11 +2433,8 @@ string HTTPPost(const string& strMsg, const map<string,string>& mapRequestHeader
 {
     ostringstream s;
     s << "POST / HTTP/1.1\r\n"
-<<<<<<< HEAD
       << "User-Agent: coine-json-rpc/" << FormatFullVersion() << "\r\n"
-=======
-      << "User-Agent: foocoin-json-rpc/" << FormatFullVersion() << "\r\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
       << "Host: 127.0.0.1\r\n"
       << "Content-Type: application/json\r\n"
       << "Content-Length: " << strMsg.size() << "\r\n"
@@ -2553,11 +2465,8 @@ static string HTTPReply(int nStatus, const string& strMsg, bool keepalive)
     if (nStatus == 401)
         return strprintf("HTTP/1.0 401 Authorization Required\r\n"
             "Date: %s\r\n"
-<<<<<<< HEAD
             "Server: coine-json-rpc/%s\r\n"
-=======
-            "Server: foocoin-json-rpc/%s\r\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             "WWW-Authenticate: Basic realm=\"jsonrpc\"\r\n"
             "Content-Type: text/html\r\n"
             "Content-Length: 296\r\n"
@@ -2584,11 +2493,8 @@ static string HTTPReply(int nStatus, const string& strMsg, bool keepalive)
             "Connection: %s\r\n"
             "Content-Length: %d\r\n"
             "Content-Type: application/json\r\n"
-<<<<<<< HEAD
             "Server: coine-json-rpc/%s\r\n"
-=======
-            "Server: foocoin-json-rpc/%s\r\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             "\r\n"
             "%s",
         nStatus,
@@ -2686,11 +2592,8 @@ bool HTTPAuthorized(map<string, string>& mapHeaders)
 }
 
 //
-<<<<<<< HEAD
 // JSON-RPC protocol.  Coine speaks version 1.0 for maximum compatibility,
-=======
-// JSON-RPC protocol.  FooCoin speaks version 1.0 for maximum compatibility,
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 // but uses JSON-RPC 1.1/2.0 standards for parts of the 1.0 standard that were
 // unspecified (HTTP errors and contents of 'error').
 //
@@ -2968,11 +2871,8 @@ void ThreadRPCServer2(void* parg)
     {
         unsigned char rand_pwd[32];
         RAND_bytes(rand_pwd, 32);
-<<<<<<< HEAD
         string strWhatAmI = "To use coine";
-=======
-        string strWhatAmI = "To use foocoin";
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
         if (mapArgs.count("-server"))
             strWhatAmI = strprintf(_("To use the %s option"), "\"-server\"");
         else if (mapArgs.count("-daemon"))
@@ -2980,11 +2880,8 @@ void ThreadRPCServer2(void* parg)
         uiInterface.ThreadSafeMessageBox(strprintf(
             _("%s, you must set a rpcpassword in the configuration file:\n %s\n"
               "It is recommended you use the following random password:\n"
-<<<<<<< HEAD
               "rpcuser=coinerpc\n"
-=======
-              "rpcuser=foocoinrpc\n"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
               "rpcpassword=%s\n"
               "(you do not need to remember this password)\n"
               "If the file does not exist, create it with owner-readable-only file permissions.\n"),

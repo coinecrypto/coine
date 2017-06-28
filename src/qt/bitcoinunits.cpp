@@ -45,7 +45,6 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-<<<<<<< HEAD
     case BTC: return QString("Coine");
     case mBTC: return QString("milliCoine (1 / 1,000)");
     case uBTC: return QString("microCoine (1 / 1,000,000)");
@@ -53,15 +52,7 @@ QString BitcoinUnits::description(int unit)
     }
 }
 //a single unit (.00000001) of Coine is called a "wander."
-=======
-    case BTC: return QString("FooCoin");
-    case mBTC: return QString("milliFooCoin (1 / 1,000)");
-    case uBTC: return QString("microFooCoin (1 / 1,000,000)");
-    default: return QString("???");
-    }
-}
-//a single unit (.00000001) of FooCoin is called a "wander."
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)

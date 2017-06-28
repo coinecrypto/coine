@@ -44,11 +44,8 @@
           <item>
            <widget class="QLabel" name="labelWalletStatus">
             <property name="toolTip">
-<<<<<<< HEAD
              <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Coine network after a connection is established, but this process has not completed yet.</string>
-=======
-             <string>The displayed information may be out of date. Your wallet automatically synchronizes with the FooCoin network after a connection is established, but this process has not completed yet.</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             </property>
             <property name="styleSheet">
              <string notr="true">QLabel { color: red; }</string>
@@ -231,11 +228,8 @@
           <item>
            <widget class="QLabel" name="labelTransactionsStatus">
             <property name="toolTip">
-<<<<<<< HEAD
              <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Coine network after a connection is established, but this process has not completed yet.</string>
-=======
-             <string>The displayed information may be out of date. Your wallet automatically synchronizes with the FooCoin network after a connection is established, but this process has not completed yet.</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
             </property>
             <property name="styleSheet">
              <string notr="true">QLabel { color: red; }</string>

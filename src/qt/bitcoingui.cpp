@@ -70,11 +70,8 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     rpcConsole(0)
 {
     resize(850, 550);
-<<<<<<< HEAD
     setWindowTitle(tr("Coine") + " - " + tr("Wallet"));
-=======
-    setWindowTitle(tr("FooCoin") + " - " + tr("Wallet"));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 #ifndef Q_WS_MAC
     qApp->setWindowIcon(QIcon(":icons/bitcoin"));
     setWindowIcon(QIcon(":icons/bitcoin"));
@@ -227,11 +224,8 @@ void BitcoinGUI::createActions()
     tabGroup->addAction(receiveCoinsAction);
 
     sendCoinsAction = new QAction(QIcon(":/icons/send"), tr("&Send coins"), this);
-<<<<<<< HEAD
     sendCoinsAction->setToolTip(tr("Send coins to a Coine address"));
-=======
-    sendCoinsAction->setToolTip(tr("Send coins to a FooCoin address"));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
     tabGroup->addAction(sendCoinsAction);
@@ -276,29 +270,19 @@ void BitcoinGUI::createActions()
     quitAction->setToolTip(tr("Quit application"));
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
-<<<<<<< HEAD
     aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About Coine"), this);
     aboutAction->setToolTip(tr("Show information about Coine"));
-=======
-    aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About FooCoin"), this);
-    aboutAction->setToolTip(tr("Show information about FooCoin"));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     aboutAction->setMenuRole(QAction::AboutRole);
     aboutQtAction = new QAction(tr("About &Qt"), this);
     aboutQtAction->setToolTip(tr("Show information about Qt"));
     aboutQtAction->setMenuRole(QAction::AboutQtRole);
     optionsAction = new QAction(QIcon(":/icons/options"), tr("&Options..."), this);
-<<<<<<< HEAD
     optionsAction->setToolTip(tr("Modify configuration options for Coine"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
     toggleHideAction = new QAction(QIcon(":/icons/bitcoin"), tr("Show/Hide &Coine"), this);
     toggleHideAction->setToolTip(tr("Show or hide the Coine window"));
-=======
-    optionsAction->setToolTip(tr("Modify configuration options for FooCoin"));
-    optionsAction->setMenuRole(QAction::PreferencesRole);
-    toggleHideAction = new QAction(QIcon(":/icons/bitcoin"), tr("Show/Hide &FooCoin"), this);
-    toggleHideAction->setToolTip(tr("Show or hide the FooCoin window"));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     exportAction = new QAction(QIcon(":/icons/export"), tr("&Export..."), this);
     exportAction->setToolTip(tr("Export the data in the current tab to a file"));
     encryptWalletAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Encrypt Wallet..."), this);
@@ -391,11 +375,8 @@ void BitcoinGUI::setClientModel(ClientModel *clientModel)
 #endif
             if(trayIcon)
             {
-<<<<<<< HEAD
                 trayIcon->setToolTip(tr("Coine client") + QString(" ") + tr("[testnet]"));
-=======
-                trayIcon->setToolTip(tr("FooCoin client") + QString(" ") + tr("[testnet]"));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
                 trayIcon->setIcon(QIcon(":/icons/toolbar_testnet"));
                 toggleHideAction->setIcon(QIcon(":/icons/toolbar_testnet"));
             }
@@ -459,11 +440,8 @@ void BitcoinGUI::createTrayIcon()
     trayIcon = new QSystemTrayIcon(this);
     trayIconMenu = new QMenu(this);
     trayIcon->setContextMenu(trayIconMenu);
-<<<<<<< HEAD
     trayIcon->setToolTip(tr("Coine client"));
-=======
-    trayIcon->setToolTip(tr("FooCoin client"));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     trayIcon->setIcon(QIcon(":/icons/toolbar"));
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
@@ -500,11 +478,8 @@ void BitcoinGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     if(reason == QSystemTrayIcon::Trigger)
     {
-<<<<<<< HEAD
         // Click on system tray icon triggers "show/hide Coine"
-=======
-        // Click on system tray icon triggers "show/hide FooCoin"
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
         toggleHideAction->trigger();
     }
 }
@@ -538,11 +513,8 @@ void BitcoinGUI::setNumConnections(int count)
     default: icon = ":/icons/connect_4"; break;
     }
     labelConnectionsIcon->setPixmap(QIcon(icon).pixmap(STATUSBAR_ICONSIZE,STATUSBAR_ICONSIZE));
-<<<<<<< HEAD
     labelConnectionsIcon->setToolTip(tr("%n active connection(s) to Coine network", "", count));
-=======
-    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to FooCoin network", "", count));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 }
 
 void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
@@ -658,20 +630,14 @@ void BitcoinGUI::setMining(bool mining, int hashrate)
     if (mining)
     {
         labelMiningIcon->setPixmap(QIcon(":/icons/mining_active").pixmap(STATUSBAR_ICONSIZE,STATUSBAR_ICONSIZE));
-<<<<<<< HEAD
         labelMiningIcon->setToolTip(tr("Mining Coine at %1 hashes per second").arg(hashrate));
-=======
-        labelMiningIcon->setToolTip(tr("Mining FooCoin at %1 hashes per second").arg(hashrate));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     }
     else
     {
         labelMiningIcon->setPixmap(QIcon(":/icons/mining_inactive").pixmap(STATUSBAR_ICONSIZE,STATUSBAR_ICONSIZE));
-<<<<<<< HEAD
         labelMiningIcon->setToolTip(tr("Not mining Coine"));
-=======
-        labelMiningIcon->setToolTip(tr("Not mining FooCoin"));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     }
 }
 
@@ -886,11 +852,8 @@ void BitcoinGUI::dropEvent(QDropEvent *event)
         if (nValidUrisFound)
             gotoSendCoinsPage();
         else
-<<<<<<< HEAD
             notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid Coine address or malformed URI parameters."));
-=======
-            notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid FooCoin address or malformed URI parameters."));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     }
 
     event->acceptProposedAction();
@@ -905,11 +868,8 @@ void BitcoinGUI::handleURI(QString strURI)
         gotoSendCoinsPage();
     }
     else
-<<<<<<< HEAD
         notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid Coine address or malformed URI parameters."));
-=======
-        notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid FooCoin address or malformed URI parameters."));
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 }
 
 void BitcoinGUI::setEncryptionStatus(int status)

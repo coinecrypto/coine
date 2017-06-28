@@ -15,11 +15,8 @@ class QAbstractItemView;
 QT_END_NAMESPACE
 class SendCoinsRecipient;
 
-<<<<<<< HEAD
 /** Utility functions used by the coine-qt UI.
-=======
-/** Utility functions used by the foocoin-qt UI.
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
  */
 namespace GUIUtil
 {
@@ -34,11 +31,8 @@ namespace GUIUtil
     void setupAddressWidget(QLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-<<<<<<< HEAD
     // Parse "coine:" URI into recipient object, return true on succesful parsing
-=======
-    // Parse "foocoin:" URI into recipient object, return true on succesful parsing
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     // See Bitcoin URI definition discussion here: https://bitcointalk.org/index.php?topic=33490.0
     bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out);
     bool parseBitcoinURI(QString uri, SendCoinsRecipient *out);

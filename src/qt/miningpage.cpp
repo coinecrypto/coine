@@ -212,11 +212,8 @@ void MiningPage::minerError(QProcess::ProcessError error)
 {
     if (error == QProcess::FailedToStart)
     {
-<<<<<<< HEAD
         reportToList("Miner failed to start. Make sure you have the minerd executable and libraries in the same directory as coine-qt.", ERROR, NULL);
-=======
-        reportToList("Miner failed to start. Make sure you have the minerd executable and libraries in the same directory as foocoin-qt.", ERROR, NULL);
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
     }
 }
 
