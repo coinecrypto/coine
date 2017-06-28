@@ -1,9 +1,0 @@
-Building Coine
-
-See doc/readme-qt.rst for instructions on building coine-qt,
-the intended-for-end-users, nice-graphical-interface, reference
-implementation of Coine.
-
-See doc/build-*.txt for instructions on building coine,
-the intended-for-services, no-graphical-interface, reference
-implementation of Coine.
