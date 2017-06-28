@@ -2002,7 +2002,7 @@ bool LoadBlockIndex(bool fAllowNew)
     
         
         // Genesis block
-        const char* pszTimestamp = "Traditionally one puts something timely here coinciding with the epoch";
+        const char* pszTimestamp = "Flight delayed after woman tosses coins into engine";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
