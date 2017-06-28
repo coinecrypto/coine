@@ -193,11 +193,9 @@ void OptionsDialog::showRestartWarning_Proxy()
 {
     if(!fRestartWarningDisplayed_Proxy)
     {
-<<<<<<< HEAD
+
         QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting Coine."), QMessageBox::Ok);
-=======
-        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting FooCoin."), QMessageBox::Ok);
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
         fRestartWarningDisplayed_Proxy = true;
     }
 }
@@ -206,11 +204,9 @@ void OptionsDialog::showRestartWarning_Lang()
 {
     if(!fRestartWarningDisplayed_Lang)
     {
-<<<<<<< HEAD
+
         QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting Coine."), QMessageBox::Ok);
-=======
-        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting FooCoin."), QMessageBox::Ok);
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
         fRestartWarningDisplayed_Lang = true;
     }
 }

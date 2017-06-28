@@ -294,7 +294,7 @@ void ThreadIRCSeed2(void* parg)
         }
         
         if (fTestNet) {
-<<<<<<< HEAD
+
             Send(hSocket, "JOIN #coine2TEST3\r");
             Send(hSocket, "WHO #coine2TEST3\r");
         } else {

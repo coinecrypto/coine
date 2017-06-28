@@ -936,7 +936,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-<<<<<<< HEAD
+
     const char* pszModule = "coine";
 =======
     const char* pszModule = "foocoin";
@@ -976,7 +976,7 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-<<<<<<< HEAD
+
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\Coine
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\Coine
     // Mac: ~/Library/Application Support/Coine
@@ -1004,7 +1004,7 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-<<<<<<< HEAD
+
     return pathRet / "Coine";
 #else
     // Unix
@@ -1056,7 +1056,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
-<<<<<<< HEAD
+
     boost::filesystem::path pathConfigFile(GetArg("-conf", "coine.conf"));
 =======
     boost::filesystem::path pathConfigFile(GetArg("-conf", "foocoin.conf"));
@@ -1070,7 +1070,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good())
-<<<<<<< HEAD
+
         return; // No coine.conf file is OK
 =======
         return; // No foocoin.conf file is OK
@@ -1081,7 +1081,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
     {
-<<<<<<< HEAD
+
         // Don't overwrite existing settings so command line settings override coine.conf
 =======
         // Don't overwrite existing settings so command line settings override foocoin.conf
@@ -1099,7 +1099,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-<<<<<<< HEAD
+
     boost::filesystem::path pathPidFile(GetArg("-pid", "coine.pid"));
 =======
     boost::filesystem::path pathPidFile(GetArg("-pid", "foocoin.pid"));
@@ -1243,7 +1243,7 @@ void AddTimeData(const CNetAddr& ip, int64 nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-<<<<<<< HEAD
+
                     string strMessage = _("Warning: Please check that your computer's date and time are correct.  If your clock is wrong Coine will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());

@@ -45,7 +45,7 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-<<<<<<< HEAD
+
     case BTC: return QString("Coine");
     case mBTC: return QString("milliCoine (1 / 1,000)");
     case uBTC: return QString("microCoine (1 / 1,000,000)");

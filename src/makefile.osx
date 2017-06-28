@@ -3,11 +3,9 @@
 # Distributed under the MIT/X11 software license, see the accompanying
 # file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
-<<<<<<< HEAD
+
 # Mac OS X makefile for coine
-=======
-# Mac OS X makefile for foocoin
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 # Originally by Laszlo Hanyecz (solar@heliacal.net)
 
 CXX=llvm-g++
@@ -30,11 +28,9 @@ LIBS= -dead_strip
 TESTDEFS = -DTEST_DATA_DIR=$(abspath test/data)
 
 ifdef STATIC
-<<<<<<< HEAD
+
 # Build STATIC if you are redistributing the coine binary
-=======
-# Build STATIC if you are redistributing the foocoin binary
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 TESTLIBS += \
  $(DEPSDIR)/lib/libboost_unit_test_framework-mt.a
 LIBS += \
@@ -111,11 +107,9 @@ else
 endif
 endif
 
-<<<<<<< HEAD
+
 all: coine
-=======
-all: foocoin
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 
 # auto-generated dependencies:
 -include obj/*.P
@@ -140,11 +134,9 @@ obj/%.o: %.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-<<<<<<< HEAD
+
 coine: $(OBJS:obj/%=obj/%)
-=======
-foocoin: $(OBJS:obj/%=obj/%)
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -156,7 +148,7 @@ obj-test/%.o: test/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-<<<<<<< HEAD
+
 test_coine: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) $(TESTLIBS)
 

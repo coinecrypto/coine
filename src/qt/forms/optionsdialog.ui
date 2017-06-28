@@ -79,7 +79,7 @@
        <item>
         <widget class="QCheckBox" name="bitcoinAtStartup">
          <property name="toolTip">
-<<<<<<< HEAD
+
           <string>Automatically start Coine after logging in to the system.</string>
          </property>
          <property name="text">
@@ -126,11 +126,9 @@
        <item>
         <widget class="QCheckBox" name="mapPortUpnp">
          <property name="toolTip">
-<<<<<<< HEAD
+
           <string>Automatically open the Coine client port on the router. This only works when your router supports UPnP and it is enabled.</string>
-=======
-          <string>Automatically open the FooCoin client port on the router. This only works when your router supports UPnP and it is enabled.</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
          </property>
          <property name="text">
           <string>Map port using &amp;UPnP</string>
@@ -140,11 +138,9 @@
        <item>
         <widget class="QCheckBox" name="connectSocks">
          <property name="toolTip">
-<<<<<<< HEAD
+
           <string>Connect to the Coine network through a SOCKS proxy (e.g. when connecting through Tor).</string>
-=======
-          <string>Connect to the FooCoin network through a SOCKS proxy (e.g. when connecting through Tor).</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
          </property>
          <property name="text">
           <string>&amp;Connect through SOCKS proxy:</string>
@@ -318,11 +314,9 @@
          <item>
           <widget class="QValueComboBox" name="lang">
            <property name="toolTip">
-<<<<<<< HEAD
+
             <string>The user interface language can be set here. This setting will take effect after restarting Coine.</string>
-=======
-            <string>The user interface language can be set here. This setting will take effect after restarting FooCoin.</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
            </property>
           </widget>
          </item>
@@ -355,11 +349,9 @@
        <item>
         <widget class="QCheckBox" name="displayAddresses">
          <property name="toolTip">
-<<<<<<< HEAD
+
           <string>Whether to show Coine addresses in the transaction list or not.</string>
-=======
-          <string>Whether to show FooCoin addresses in the transaction list or not.</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
          </property>
          <property name="text">
           <string>&amp;Display addresses in transaction list</string>

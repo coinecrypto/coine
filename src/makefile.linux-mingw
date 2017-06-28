@@ -70,11 +70,9 @@ OBJS= \
     obj/walletdb.o \
     obj/noui.o
 
-<<<<<<< HEAD
+
 all: coine.exe
-=======
-all: foocoin.exe
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 
 obj/scrypt.o: scrypt.c
 	i586-mingw32msvc-gcc -c $(CFLAGS) -o $@ $^
@@ -87,11 +85,9 @@ DEFS += -DHAVE_BUILD_INFO
 obj/%.o: %.cpp $(HEADERS)
 	i586-mingw32msvc-g++ -c $(CFLAGS) -o $@ $<
 
-<<<<<<< HEAD
+
 coine.exe: $(OBJS:obj/%=obj/%)
-=======
-foocoin.exe: $(OBJS:obj/%=obj/%)
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 	i586-mingw32msvc-g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -99,17 +95,15 @@ TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
 obj-test/%.o: test/%.cpp $(HEADERS)
 	i586-mingw32msvc-g++ -c $(TESTDEFS) $(CFLAGS) -o $@ $<
 
-<<<<<<< HEAD
+
 test_coine.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
-=======
-test_foocoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
 	i586-mingw32msvc-g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework $(LIBS)
 
 
 clean:
 	-rm -f obj/*.o
-<<<<<<< HEAD
+
 	-rm -f coine.exe
 	-rm -f obj-test/*.o
 	-rm -f test_coine.exe

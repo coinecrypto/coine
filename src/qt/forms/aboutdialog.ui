@@ -11,11 +11,9 @@
    </rect>
   </property>
   <property name="windowTitle">
-<<<<<<< HEAD
+
    <string>About Coine</string>
-=======
-   <string>About FooCoin</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
@@ -54,11 +52,9 @@
           <cursorShape>IBeamCursor</cursorShape>
          </property>
          <property name="text">
-<<<<<<< HEAD
+
           <string>&lt;b&gt;Coine&lt;/b&gt; version</string>
-=======
-          <string>&lt;b&gt;FooCoin&lt;/b&gt; version</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
          </property>
          <property name="textInteractionFlags">
           <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>

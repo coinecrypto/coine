@@ -11,11 +11,9 @@
    </rect>
   </property>
   <property name="windowTitle">
-<<<<<<< HEAD
+
    <string>Coine - Debug window</string>
-=======
-   <string>FooCoin - Debug window</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -326,11 +324,9 @@
        <item row="15" column="0">
         <widget class="QPushButton" name="openDebugLogfileButton">
          <property name="toolTip">
-<<<<<<< HEAD
+
           <string>Open the Coine debug logfile from the current data directory. This can take a few seconds for large logfiles.</string>
-=======
-          <string>Open the FooCoin debug logfile from the current data directory. This can take a few seconds for large logfiles.</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
          </property>
          <property name="text">
           <string>&amp;Open</string>
@@ -356,11 +352,9 @@
        <item row="17" column="0">
         <widget class="QPushButton" name="showCLOptionsButton">
          <property name="toolTip">
-<<<<<<< HEAD
+
           <string>Show the coine-qt help message to get a list with possible command-line options.</string>
-=======
-          <string>Show the foocoin-qt help message to get a list with possible command-line options.</string>
->>>>>>> 1e1f956e0e2e99823c7cd7c4a3b95d01e2830016
+
          </property>
          <property name="text">
           <string>&amp;Show</string>
