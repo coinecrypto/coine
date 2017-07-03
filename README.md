@@ -5,3 +5,5 @@ Coine (FOO)
 
 
 Scrypt Hashcash PoW Template
+
+libssl-dev required
